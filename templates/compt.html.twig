@@ -1,0 +1,53 @@
+{% extends 'base.html.twig'  %}
+{% block title %}Test Application{% endblock %}
+  
+{% block body %}
+<div  class="containerBody">
+{% include 'menu.html.twig'  %}
+    <div class="itemBody">
+      <input type="hidden" name="token" value="{{ csrf_token('deagt-item') }}"/>
+        <ion-icon onclick="showHideMenu()" class="MenuIcon" name="reorder-three-outline"></ion-icon>
+         <center>
+          <br>
+          <h3>Votre Compt</h3>
+          <br>
+          <div class="continerInputForm">
+            <div>Photo : </div>
+            <div><input accept="image/*"  class="textInputForm" style="background-color: white;color: black;"  style="border-bottom: none;" id="photoAdminUpdate" type="file"></div>
+        </div>
+        <br>           
+          <div class="continerInputForm">
+            <div>Nom : </div>
+              <div><input class="textInputForm" style="background-color: white;border-bottom-color:black ;color: black;"  id="nomAdminUpdate" type="text"></div>
+        </div>
+        <br>
+          <div class="continerInputForm">
+            <div>Prenom : </div>
+              <div><input class="textInputForm" style="background-color: white;border-bottom-color:black ;color: black;"  id="prenomAdminCompt" type="text"></div>
+        </div>
+        <br>
+          <div class="continerInputForm">
+            <div>Email : </div>
+              <div><input class="textInputForm" style="background-color: white;border-bottom-color:black ;color: black;"  id="emailAdminCompt" type="text"></div>
+        </div>
+        <br>
+          <div class="continerInputForm">
+            <div>Mot de passe : </div>
+              <div><input class="textInputForm" style="background-color: white;border-bottom-color:black ;color: black;"  id="pwAdminCompt" type="text"></div>
+        </div>
+        <br>
+        <br>           
+
+        <input type="button" value="Moddifier" id="UpdateAdmin" onclick="updateAdmin()" class="btnFormulaire"/>&nbsp;
+         </center>  
+          
+           </div>
+      
+  </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="{{asset('assets/degat.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock  %}

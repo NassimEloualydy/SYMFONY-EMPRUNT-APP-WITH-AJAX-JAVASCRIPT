@@ -1,0 +1,260 @@
+{% extends 'base.html.twig'  %}
+{% block title %}Test Application{% endblock %}
+  
+{% block body %}
+<div  class="containerBody"  >
+    {# <div class="itemBodyMenu">
+    <center>
+        <br>
+        <h3>Menu</h3>
+        <br>
+        <img  src={{path}} class="photoCompt">
+        <br>
+        <br>
+    {{nom}} {{prenom}}
+        <br>
+        <br>
+        <div  onclick="HideMenu('/materiel')" class="btnMenuContainer">
+            <div>Materiel</div>
+            <div></div>
+        </div>
+        <div onclick="HideMenu('/client')" class="btnMenuContainer">
+            <div>Client</div>
+            <div></div>
+        </div>
+        <div onclick="HideMenu('/emprunt')" class="btnMenuContainer">
+            <div>Emprunt</div>
+            <div></div>
+        </div>
+        <div onclick="HideMenu('/materiel')" class="btnMenuContainer">
+            <div>Materiel</div>
+            <div></div>
+        </div>
+        <div onclick="Quitter()" class="btnMenuContainer">
+            <div>Quitter</div>
+            <div></div>
+        </div>
+
+    </center>
+    </div> #}
+    {% include 'menu.html.twig'  %}
+
+    <div class="itemBody">
+        <!-- <input type="button"   value="Menu"/> -->
+        <ion-icon onclick="showHideMenu()" class="MenuIcon" name="reorder-three-outline"></ion-icon>
+        <!-- detail item -->
+        <div id="detailMaterile" class="HidedetailItem">
+              <center>
+                <br>
+                <h3>
+                  Detaile de Materiel
+                </h3>      
+                      <img src="" id="imgDetail"  class="imgDetail">
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Matrecule :</div>
+                        <div class="DetailInputs" id="matrecule_detail">Nassim</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Designation :</div>
+                        <div class="DetailInputs" id="designation_detail" >Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Prix :</div>
+                        <div class="DetailInputs" id="prix_detail">Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Date de Permption :</div>
+                        <div class="DetailInputs" id="date_peremption_detail">Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Qentite :</div>
+                        <div class="DetailInputs"id="qte_detail">Eloualydy</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Category :</div>
+                        <div class="DetailInputs" id="category_detail">Eloualydy</div>
+                      </div>
+          
+                      <br>
+
+                      <button type="button" onclick="hideDetailForm()" class="btn btn-outline-primary">Annuler</button>
+
+              </center>
+        </div>
+        <!-- detail item -->
+        <!-- formulaire -->
+        <div id="formS" class="hideFormulaire">
+            <center>
+                <br>
+                <h3>Formulaire de Matier</h3>
+<br>
+<br>
+                <div class="continerInputForm">
+                    <div>Photo : </div>
+                    <div><input accept="image/*"  class="textInputForm"   style="border-bottom: none;" id="photo" type="file"></div>
+                </div>
+                <br>           
+                <div class="continerInputForm">
+                    <div>Mtrecule : </div>
+                    <div><input class="textInputForm"   id="matrecule" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Designation : </div>
+                    <div><input class="textInputForm"   id="designation" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Prix : </div>
+                    <div><input class="textInputForm"   id="prix" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Date Peremption : </div>
+                    <div><input class="textInputForm"   id="date_peremption" type="text"></div>
+                </div>
+                     
+                <br>           
+
+                <div class="continerInputForm">
+                    <div>Qentite : </div>
+                    <div><input class="textInputForm"   id="qte" type="text"></div>
+                </div>
+                     
+                <br>  
+                
+                <div class="continerInputForm">
+                    <div>Category : </div>
+                    <!-- <div><input    id="category" type="text"></div> -->
+                    <div>
+                      <select class="textInputForm" id="category">
+                        <option value="">Choisire une category</option>
+                        <option value="Eelectromenager">Eelectromenager</option>
+                        <option value="Entretient de la maison">Entretient de la maison</option>
+                        <option value="celmatique">celmatique</option>
+                        <option value="Tv-PHOTO-video">Tv-PHOTO-video</option>
+                       <option value="Audio-hi fi"> Audio-hi fi</option>
+                        <option value="informatique">informatique</option>
+                        <option value="Smartfone">Smartfone </option>
+                        <option value="Article-cuisine	">Article-cuisine	</option>
+                        <option value="Jeux">Jeux</option>
+                      </select>
+                    </div>
+                  </div>
+                     
+                <br>           
+
+                <input type="button" value="Ajouter" id="submit" class="btnFormulaire">&nbsp;
+                <input type="button" value="Annuler" onclick="hideForm()" class="btnFormulaire">
+            </center>
+        </div>
+        <!-- end formulaire -->
+        <h3 class="Title">Gestion Des Matier</h3>
+        <center>
+<br>
+<br>
+<br>
+
+            <div class="charts">
+             <div class="charItem"><canvas id="myChart1"></canvas></div>
+             <div class="charItem">
+              <canvas id="myChart2"></canvas>
+            </div> 
+              
+              
+            </div>
+            <br>
+            <br>
+            <div class="listContainer">
+
+                <div class="list">
+                    <br>
+                    <button type="button" onclick="showFormulaire()" class="btnAdd btn btn-outline-primary">Nouveau</button>
+                    <h3 style="text-align: left;margin-left: 10px;">Bare de recherche</h3>
+                    <div class="containerSearch">
+                        <input type="text" id="matrecule_search" placeholder="Matrecule" class="inputSearch"><br><br>
+                        <input type="text" id="designation_search" placeholder="Designation" class="inputSearch"><br><br>
+                        <input type="text" id="prix_search" placeholder="Prix" class="inputSearch">
+                    </div>
+                    <br>
+                    <div class="containerSearch">
+                        <input type="text" id="date_search" placeholder="Date Peremption" class="inputSearch"><br><br>
+                        <input type="text" id="qte_search" placeholder="Qentiter" class="inputSearch"><br><br>
+                        <input type="text" id="category_search" placeholder="Category" class="inputSearch">
+                    </div>
+                    <br>
+                                        <button type="button" onclick="search_materiel()" class="btn btn-outline-primary">Chercher</button>
+                                        <button type="button" onclick="hideForm()" class="btn btn-outline-primary">Actualiser</button>
+                    <br>
+
+                    <div class="containerTable">
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Matrecule</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col" colspan="3">Option</th>
+                          </tr>
+                        </thead>
+                        <tbody id="listMateriel">
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="pagination">
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li onclick="Previos()" class="page-item">
+                            <a  class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li onclick="Next()" class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+
+                </div>
+<br>
+                <div class="latest">
+                  <center>
+                    <br>
+                    <h5>Les dernier Ajoute</h5>
+                    <br>
+                    <div id="itemLatestAdded">
+
+                    </div>
+                  </center>
+                </div>
+            </div>
+
+        </center>
+    </div>
+      
+  </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="{{asset('assets/script.js')}}" ></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock  %}

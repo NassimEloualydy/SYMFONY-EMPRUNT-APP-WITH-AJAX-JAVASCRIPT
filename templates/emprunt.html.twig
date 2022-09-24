@@ -1,0 +1,323 @@
+{% extends 'base.html.twig'  %}
+{% block title %}Test Application{% endblock %}
+  
+{% block body %}
+<div  class="containerBody">
+{% include 'menu.html.twig'  %}
+    <div class="itemBody">
+        <!-- <input type="button"   value="Menu"/> -->
+        <ion-icon onclick="showHideMenu()" class="MenuIcon" name="reorder-three-outline"></ion-icon>
+        <!-- detail item -->
+        <div id="detailMaterile" class="HidedetailItem">
+              <center>
+              <div class="containerDetailMaterile">
+                <div class="DetailMaterileItem">
+                  <br>
+                  <h3>
+                    Detaile de Client
+                  </h3>      
+                        <img src="" id="imgClient_emprunt"  class="imgDetail">
+                        <br>
+                        <div class="containerDetailInputs empruntContainerItemDrtail">
+                          <div class="DetailInputs">CNI :</div>
+                          <div class="DetailInputs" id="CNI_detail_Emprunt">Nassim</div>
+                        </div>
+                        <br>
+                        <div class="containerDetailInputs empruntContainerItemDrtail">
+                          <div class="DetailInputs">Nom :</div>
+                          <div class="DetailInputs" id="nom_detail_Emprunt" >Eloualydy</div>
+                        </div>
+            
+                        <br>
+                        <div class="containerDetailInputs empruntContainerItemDrtail">
+                          <div class="DetailInputs">Prenom :</div>
+                          <div class="DetailInputs" id="prenom_detail_Emprunt">Eloualydy</div>
+                        </div>
+            
+                        <br>
+                        <div class="containerDetailInputs empruntContainerItemDrtail">
+                          <div class="DetailInputs">Email :</div>
+                          <div class="DetailInputs" id="email_detail_Emprunt">Eloualydy</div>
+                        </div>
+            
+                        <br>
+                        <div class="containerDetailInputs empruntContainerItemDrtail">
+                          <div class="DetailInputs">Telephone :</div>
+                          <div class="DetailInputs"id="tel_detail_Emprunt">Eloualydy</div>
+                        </div>
+                        <br>
+                        <div class="containerDetailInputs empruntContainerItemDrtail">
+                          <div class="DetailInputs">Adresse :</div>
+                          <div class="DetailInputs" id="adresse_detail_Emprunt">Eloualydy</div>
+                        </div>
+            
+                        <br>
+  
+                </div>
+                <div class="DetailMaterileItem">                <br>
+                <h3>
+                  Detaile de Materiel
+                </h3>      
+                      <img src="" id="imgMateriel_Emprunt"  class="imgDetail">
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Matrecule :</div>
+                        <div class="DetailInputs" id="matrecule_detail_Emprunt">Nassim</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Designation :</div>
+                        <div class="DetailInputs" id="designation_detail_Emprunt" >Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Prix :</div>
+                        <div class="DetailInputs" id="prix_detail_Emprunt">Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Date de Permption :</div>
+                        <div class="DetailInputs" id="date_peremption_detail_Emprunt">Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Qentite :</div>
+                        <div class="DetailInputs"id="qte_detail_Emprunt">Eloualydy</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Category :</div>
+                        <div class="DetailInputs" id="category_detail_Emprunt">Eloualydy</div>
+                      </div>
+          
+                      <br>
+
+
+</div>
+                <div class="DetailMaterileItem">                <br>
+                <h3>
+                  Detaile de Emprunt
+                </h3>      
+                <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Date Emprunt :</div>
+                        <div class="DetailInputs" id="dateEmprunt_detail_Emprunt">Nassim</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Date Reteur :</div>
+                        <div class="DetailInputs" id="dateReteur_detail_Emprunt" >Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs empruntContainerItemDrtail">
+                        <div class="DetailInputs">Montant Totale :</div>
+                        <div class="DetailInputs" id="montant_detail_Emprunt">Eloualydy</div>
+                      </div>
+          
+                    
+                      <br>
+
+
+</div>
+              </div>
+                      <button type="button" onclick="hideDetailForm()" class="btn btn-outline-primary">Annuler</button>
+                      <br>
+                      <br>
+
+              </center>
+        </div>
+        <!-- detail item -->
+        <!-- formulaire -->
+        <div id="formS" class="hideFormulaire">
+            <center>
+                <br>
+                <h3>Formulaire de Emprunt</h3>
+<br>
+<br>
+                <div class="continerInputForm">
+                    <div>Client : </div>
+                    <div>
+                      <select class="textInputForm" id="clientEmprunt">
+                        <option value="">Choisire une category</option>
+                      </select>
+                    </div>
+                </div>
+                <br>           
+                <div class="continerInputForm">
+                  <div>Materiel : </div>
+                  <div>
+                    <select class="textInputForm" id="materielEmprunt">
+                      <option value="">Choisire une category</option>
+                    </select>
+                  </div>
+              </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Date Emprunt : </div>
+                    <div><input class="textInputForm"   id="dateEmprunt" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Date Reteur : </div>
+                    <div><input class="textInputForm"   id="dateReteur" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Montant Totale : </div>
+                    <div><input class="textInputForm"   id="montentTotale" type="text"></div>
+                </div>
+                                       
+                     
+                <br>           
+
+                <input type="button" value="Ajouter" id="submitEmprunt" onclick="submitEmprunt()" class="btnFormulaire"/>&nbsp;
+                <input type="button" value="Annuler" onclick="hideFormulaireEmprunt()" class="btnFormulaire"/>
+            </center>
+        </div>
+        <!-- end formulaire -->
+        <h3 class="Title">Gestion Des Emprunt</h3>
+        <center>
+<br>
+<br>
+<br>
+
+<div class="charts">
+  <div class="charItem"><canvas id="myChartEmpruntClient"></canvas></div>
+  <div class="charItem">
+   <canvas id="myChartEmpruntClientMateriel"></canvas>
+ </div> 
+   
+   
+ </div>
+ <br> 
+            <br>
+            <div class="listContainer heightContainer">
+                <div class="list heightPlus">
+                    <br>
+                    <button type="button" onclick="showFormulaire()" class="btnAdd btn btn-outline-primary">Noveau</button>
+                    <h3 style="text-align: left;margin-left: 10px;">Bare de recherche</h3>
+                    <div class="containerSearch">
+                        <input type="text" id="cni_search_emprunt" placeholder="CNI" class="inputSearch EmpruntSearch"><br><br>
+                        <input type="text" id="nom_search_emprunt" placeholder="Nom" class="inputSearch EmpruntSearch"><br><br>
+                        <input type="text" id="prenom_search_emprunt" placeholder="Prenom" class="inputSearch EmpruntSearch"><br><br>
+                        <input type="text" id="email_search_emprunt" placeholder="Email" class="inputSearch EmpruntSearch">
+                    </div>
+                    <br>
+                    <div class="containerSearch">
+                        <input type="text" id="tel_search_emprunt" placeholder="Telephone" class="inputSearch EmpruntSearch"><br><br>
+                        <input type="text" id="adresse_search_emprunt" placeholder="Adresse" class="inputSearch EmpruntSearch"><br><br>
+                        <input type="text" id="matrecule_search_emprunt" placeholder="Matrecule" class="inputSearch EmpruntSearch"><br><br>
+                        <input type="text" id="designation_search_emprunt" placeholder="Designation" class="inputSearch EmpruntSearch">
+                    </div>
+                    <br>
+                    <div class="containerSearch">
+                      <input type="text" id="prix_search_emprunt" placeholder="Prix" class="inputSearch EmpruntSearch"><br><br>
+                      <input type="text" id="date_search_emprunt" placeholder="Date Peremption" class="inputSearch EmpruntSearch"><br><br>
+                      <input type="text" id="qte_search_emprunt" placeholder="Qentite" class="inputSearch EmpruntSearch"><br><br>
+                      <select class="inputSearch EmpruntSearch" id="category_search_emprunt">
+                        <option value="">Choisire une category</option>
+                        <option value="Eelectromenager">Eelectromenager</option>
+                        <option value="Entretient de la maison">Entretient de la maison</option>
+                        <option value="celmatique">celmatique</option>
+                        <option value="Tv-PHOTO-video">Tv-PHOTO-video</option>
+                       <option value="Audio-hi fi"> Audio-hi fi</option>
+                        <option value="informatique">informatique</option>
+                        <option value="Smartfone">Smartfone </option>
+                        <option value="Article-cuisine	">Article-cuisine	</option>
+                        <option value="Jeux">Jeux</option>
+                      </select>
+                    </div>
+                  <br>
+                  <div class="containerSearch">
+                      <input type="text" id="dateEmprunt_search_emprunt" placeholder="Date Emprunt" class="inputSearch EmpruntSearch"><br><br>
+                    <input type="text" id="dateReteur_search_emprunt" placeholder="Date Reteur" class="inputSearch EmpruntSearch"><br><br>
+                    <input type="text" id="montantTotal_search_emprunt" placeholder="Motant Totale" class="inputSearch EmpruntSearch">
+                    <input type="text" style="visibility:hidden;" placeholder="Adresse" class="inputSearch EmpruntSearch">
+                </div>
+                  <br>
+                                      <button type="button" onclick="search_Emprunt()" class="btn btn-outline-primary">Chercher</button>
+                                        <button type="button" onclick="hideForm()" class="btn btn-outline-primary">Actualiser</button>
+                    <br>
+
+                    <div class="containerTable">
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            
+                            <th scope="col">Client</th>
+                            <th scope="col">Nom & Prenom</th>
+                            <th scope="col">Materiel</th>
+                            <th scope="col">Date Emprunt</th>
+                            <th scope="col">Date Reteur</th>
+                            <th scope="col" colspan="3">Option</th>
+                          </tr>
+                        </thead>
+                        <tbody id="listEmprunt">
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="pagination">
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li onclick="PreviosEmprunt()" class="page-item">
+                            <a  class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li onclick="NextEmprunt()" class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+
+                </div>
+<br>
+                <div class="latest heightPlus">
+                  <center>
+                    <br>
+                    <div class="ticketCountAll">Les materiel emprunter Par Client</div> 
+                    <br>
+                    <select class="inputSearch EmpruntSearch" id="clientForEmpruntMateriel" oninput="getMaterielForclinetByEmprunt()" style="width: 90%;">
+                      <option value="">Choisire une Client</option>
+                      <option value="Eelectromenager">Eelectromenager</option>
+                      <option value="Entretient de la maison">Entretient de la maison</option>
+                      <option value="celmatique">celmatique</option>
+                      <option value="Tv-PHOTO-video">Tv-PHOTO-video</option>
+                     <option value="Audio-hi fi"> Audio-hi fi</option>
+                      <option value="informatique">informatique</option>
+                      <option value="Smartfone">Smartfone </option>
+                      <option value="Article-cuisine	">Article-cuisine	</option>
+                      <option value="Jeux">Jeux</option>
+                    </select>
+                    <br>
+                    <div id="itemLatestAddedEmprunt">
+                      <!-- <div class='itemLatestAdded'><img  class='photoMateriel'> &nbsp;<div>Nassim eloualydy</div></div>                      -->
+                     </div>
+                    </center>
+                </div>
+            </div>
+
+        </center>
+    </div>
+      
+  </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="{{asset('assets/emprunt.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock  %}

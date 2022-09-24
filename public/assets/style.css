@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+   transition: .3s;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  padding-bottom: 10px;
+}
+
+.BtnEmailOblier{
+  padding: 5px;
+  border-radius: 5px;
+  color: #0d6efd;
+  background-color: white;
+  border-color:white ;
+  border: 1px solid white;
+}
+
+.containerLogin{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+} 
+.itemLogin{
+  width: 50%;
+  height: 100vh;    
+}
+.itemLogin:nth-child(1){
+ background-color: gray;
+ color: white;
+}
+.itemLogin:nth-child(2){
+  overflow: hidden;
+}
+.containerLoginForm{
+  width: 200%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  /* left: -100%; */
+  left: 0;
+}
+.signin,.signup{
+  width: 50%;
+}
+.BtnActive,.BtnUnActive{
+  padding: 5px;
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+}.BtnActive{
+  background-color: #0d6efd;
+  color: white;
+}
+.BtnActive:hover{
+  background-color: white;
+  color: #0d6efd;
+}
+.BtnUnActive{
+  background-color: white;
+  color: #0d6efd;
+}
+.BtnUnActive:hover{
+  background-color: #0d6efd;
+  color: white;
+}
+.containerInputsLoogn{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputText{
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+.containerBody{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.itemBodyMenu{
+  width: 20%;
+  height: 100vh;
+  background-color: #0d6efd;
+  color: white;
+  z-index: 99;
+}
+.itemBody{
+  width: 80%;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+.photoCompt{
+  height: 180px;
+  width: 180px;
+  border: 1px solid black;
+  border-radius: 180px;
+  object-fit: cover;
+}
+.btnMenuContainer{
+  padding: 10px 5px;
+  width: 90%;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btnMenuContainer:hover{
+  background-color: white;
+  color: #0d6efd;
+}
+.MenuIcon{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 9999;
+  font-size: 55px;
+  font-weight: bolder;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.btnFormulaire{
+  padding: 5px;
+  border: 1px solid white;
+  color: white;
+  background-color: #0d6efd;
+  border-radius: 5px;
+}
+.btnFormulaire:hover{
+  color: #0d6efd;
+  background-color: white;
+    
+}
+.continerInputForm{
+  width: 90%;
+  display: block;
+  text-align: left;
+}
+.textInputForm{
+width: 100%;
+border: none;
+border-bottom: 1px solid white;
+color: white;
+background-color: #0d6efd;
+outline: none;
+}
+.formulaire{
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #0d6efd;
+  color: white;
+  z-index: 99999;  
+}
+.hideFormulaire{
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  right: -20%;
+  background-color: #0d6efd;
+  color: white;
+  z-index: 99999;  
+}
+.Title{
+  position: absolute;
+  top: 20px;
+  left: 10px;
+
+}
+
+.listContainer{
+  width: 90%;
+  height: 115vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+  bottom: 5px; 
+}
+.heightContainer{
+  height: 130vh;
+}
+.list{
+  width: 75%;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  padding-bottom: 20px;
+  height: 110vh;
+}
+.latest{
+  width: 20%;
+  height: 110vh;
+  border: 1px solid black;
+  border-radius: 5px;
+
+
+}
+.btnAdd{
+position: absolute;
+right: 10px;
+top: 10px;
+}
+.containerSearch{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items:center ;
+}
+.inputSearch{
+  width: 30%;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.containerTable{
+  width: 90%;
+}
+.pagination{
+  text-align: center;
+  position: relative;
+  left: 40%;
+}
+.photoMateriel{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50px;
+  object-fit: cover;
+}
+th,td{
+  line-height: 50px;
+}
+.Icon{
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px ;
+  margin-top: 10px;
+}
+.Icon_delete{
+  color: rgb(163, 4, 4);
+  border-color: rgb(163, 4, 4);
+  transition: .3s;
+  cursor: pointer;
+}
+.Icon_delete:hover{
+    background-color: rgb(163, 4, 4);
+    color: white;
+    transition: .3s;
+  }
+  .Icon_update{
+    color: rgb(195, 224, 31);
+    border-color: rgb(195, 224, 31);
+    transition: .3s;
+    cursor: pointer;
+  }
+  .Icon_update:hover{
+      background-color: rgb(195, 224, 31);
+      color: white;
+      transition: .3s;
+    }
+    .Icon_details{
+        color: rgb(127, 193, 255);
+        border-color: aquamarine;
+        transition: .3s;
+        cursor: pointer;
+      }
+      .Icon_details:hover{
+          background-color: aquamarine;
+          color: white;
+          transition: .3s;
+        }
+    .HidedetailItem{
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      right: -100%;
+    }
+    .ShoWdetailItem{
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+      backdrop-filter: blur(5px);
+    }
+    .containerDetailInputs{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 40%;
+      position: relative;
+      left: 8%;
+    }
+    .DetailInputs{
+      width: 50%;
+     text-align: left;
+    }
+    .imgDetail{
+      /* height: 100px;
+      width: 120px;
+      border: 1px solid black;
+      border-radius: 5px; */
+      height: 180px;
+      width: 180px;
+      border: 1px solid black;
+      border-radius: 180px;
+      object-fit: cover;
+    
+    }
+    .charts{
+      width: 90%;
+      height: 45vh;
+      border: 1px solid black;
+      border-radius: 5px;
+      display:  flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 5px;
+    }
+    .charItem{
+      position: relative;
+     width: 50%;
+     height: 100%;
+    }
+.itemLatestAdded{
+  width: 90%;
+  padding: 5px 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+.countAll{
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+.ticketCountAll{
+  font-size: 18px;
+  font-weight: bolder;
+}
+.nbrChoosen{
+  font-size: 10px;
+  background-color: #0d6efd;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #0d6efd;
+  border-radius: 15px;
+  color: white;
+  padding: 5px;
+}
+#detailMaterile{
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.containerDetailMaterile{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.DetailMaterileItem{
+  width: 33%;
+}
+.empruntContainerItemDrtail{
+  width: 100%;
+  position: relative;
+  left: 85px;
+}
+.EmpruntSearch{
+  width: 24%;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.heightPlus{
+  height: 126vh;
+}
+@media (max-width:1000px){
+
+  /* .EmpruntSearch{
+    width: 24%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+  } */
+  .DetailMaterileItem{
+    width: 100%;
+  }
+    
+.containerDetailMaterile{
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+  .charts{
+    width: 90%;
+    height: 90vh;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .charItem{
+    position: relative;
+   width: 90%;
+   height: 50%;
+  }
+  
+  .containerDetailInputs{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    position: relative;
+    left: 12%;
+  }
+
+  .containerSearch{
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items:center ;
+  }
+  .inputSearch{
+    width: 90%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .list{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+  padding-bottom: 20px;
+    height: auto;
+    
+
+  }
+  
+  .latest{
+    width: 100%;
+    height: 125vh;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .listContainer{
+    width: 90%;
+    height: 275vh;
+    border-radius: 5px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .MenuIcon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 9999;
+    font-size: 55px;
+    font-weight: bolder;
+    cursor: pointer;
+    visibility: visible;
+  }
+  .formulaire{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #0d6efd;
+    color: white;
+    z-index: 99999;
+  }
+  .hideFormulaire{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #0d6efd;
+    color: white;
+    z-index: 99999;
+    
+  }
+
+  .containerBody{
+    
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .itemBodyMenu{
+    z-index: 99999999;
+    background-color: #0d6efd;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    }
+    .itemBody{
+      width: 100%;
+      height: 100vh;
+    }
+    
+  .containerInputsLoogn{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+   .containerLogin{
+    display: block;
+    justify-content: center;
+    align-items: center;
+   } 
+   .itemLogin:nth-child(2){
+    width: 100%;
+    height: 100vh;   
+    display: block; 
+  }
+  .itemLogin:nth-child(1){
+   background-color: gray;
+   color: white;
+   width: 0%;
+   display: none;
+  }
+  
+}
+@media (max-width:700px){
+  .containerTable{
+    width: 90%;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width:500px){
+  .containerInputsLoogn{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}

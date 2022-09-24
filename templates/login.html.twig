@@ -1,0 +1,70 @@
+{% extends 'base.html.twig'  %}
+{% block title %}Test Application{% endblock %}
+  
+{% block body %}
+<div  class="containerLogin">
+    <div class="itemLogin">
+    </div>
+    <div class="itemLogin">
+        <div class="containerLoginForm">
+            <div class="signin">
+                <center>
+                    <h3>Page de connexion</h3>
+                    <div class="containerInputsLoogn">
+                        <div>Email :</div>
+                        <div><input type="text" id="emailCnx" class="inputText"></div>
+                    </div>
+                    <br>
+                    <div class="containerInputsLoogn">
+                        <div>Mot de passe  :</div>
+                        <div><input type="text" id="pwCnx" class="inputText"></div>
+                    </div>
+                    <br>
+                    <input type="button" value="Connexion" onclick="connexion()" class="BtnActive">
+                    <input type="button" value="Inscrire" onclick="switchLoginBtn('-100%')" class="BtnUnActive">
+                    <br/>
+                    <br/>
+                    <input type="button" value="Mot de passe Oblier ?" onclick="getPassword()" class="BtnEmailOblier"/>
+
+                </center>
+            </div>    
+            <div class="signup">
+                <center>
+                    <br>
+                    <h3>Page d'Inscription</h3>
+                    <br>
+                    <div class="containerInputsLoogn">
+                        <div>Photo :</div>
+                        <div><input type="file" id="photo" class="inputText" style="border: none;"></div>
+                    </div>
+                    <br>
+                    <div class="containerInputsLoogn">
+                        <div>Nom :</div>
+                        <div><input type="text" id="nom" class="inputText"></div>
+                    </div>
+                    <br>
+                    <div class="containerInputsLoogn">
+                        <div>Prenom :</div>
+                        <div><input type="text" id="prenom" class="inputText"></div>
+                    </div>
+                    <br>
+                    <div class="containerInputsLoogn">
+                        <div>Email :</div>
+                        <div><input type="text" id="email" class="inputText"></div>
+                    </div>
+                    <br>
+                    <div class="containerInputsLoogn">
+                        <div>Mot de passe :</div>
+                        <div><input type="text" id="pw" class="inputText"></div>
+                    </div>
+                    <br>
+
+                    <input type="button" value="Inscrire" onclick="Inscrire()" class="BtnActive">
+                    <input type="button" value="Connexion" onclick="switchLoginBtn('0')" class="BtnUnActive">
+                </center>
+            </div>    
+        </div>
+    </div>
+</div>
+<script src="{{asset('assets/script.js')}}" ></script>
+{% endblock  %}

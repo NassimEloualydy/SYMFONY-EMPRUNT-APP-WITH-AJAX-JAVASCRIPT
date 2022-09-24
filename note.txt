@@ -1,0 +1,40 @@
+Categorie (idcat, libelle)
+Materiel (idMat, libelle, prixEmprunt , idCat#)
+Client (idClt, nomClient, prenomClient, emailClient, tel,adresse)
+Emprunter (idEmp,  cni,idClt# , idMat# , dateEmprunt, DateRetour, montantTotal)
+Degats (idD, idEmp#, description, coutEstime,date)
+--------------------
+compt (id,nom,prenom,email,pw)
+Materiel(id,matrecule,designation,prix,datePeremtion,category,qte)
+-----------------
+to create a new project in symfony :
+=>composer create-project symfony/skeleton name_of_the_project
+---
+after creating symfony project got to 
+D:\xampp\apache\conf\extra\httpd-vosts.conf
+ and tipe this
+=>
+<VirtualHost *:80>
+    DocumentRoot "D:\xampp\htdocs\EmpruntSymfony\public"
+    ServerName Emprunt.test
+</VirtualHost>
+after that go open notes as adminstratore then
+
+---
+and then you have to install  annotation and twig enjin and asset
+=>composer require annotations
+=>composer require twig
+=>composer require symfony/asset
+to create a new entity you have to tipe
+  => php bin/console m:e NameEntity
+then tipe 
+ => php bin/console doctrine:migrations:diff
+finally execute the migration
+ => php bin/console doctrine:migrations:migrate
+install doctrine
+=>composer require doctrine/maker
+to create database add in .env :
+=>DATABASE_URL=mysql://root:@127.0.0.1:3306/Afpic
+then tipe :
+=>php bin/console doctrine:database:create
+

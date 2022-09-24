@@ -1,0 +1,253 @@
+{% extends 'base.html.twig'  %}
+{% block title %}Test Application{% endblock %}
+  
+{% block body %}
+<div  class="containerBody"  >
+{% include 'menu.html.twig'  %}
+
+    {# <div class="itemBodyMenu">
+    <center>
+        <br>
+        <h3>Menu</h3>
+        <br>
+        <img  src={{path}} class="photoCompt">
+        <br>
+        <br>
+    {{nom}} {{prenom}}
+        <br>
+        <br>
+        <div  onclick="HideMenu('/materiel')" class="btnMenuContainer">
+            <div>Materiel</div>
+            <div></div>
+        </div>
+        <div onclick="HideMenu('/client')" class="btnMenuContainer">
+            <div>Client</div>
+            <div></div>
+        </div>
+        <div onclick="HideMenu('/emprunt')" class="btnMenuContainer">
+          <div>Emprunt</div>
+          <div></div>
+      </div>
+      <div onclick="HideMenu('/materiel')" class="btnMenuContainer">
+            <div>Materiel</div>
+            <div></div>
+        </div>
+        <div onclick="Quitter()" class="btnMenuContainer">
+            <div>Quitter</div>
+            <div></div>
+        </div>
+
+    </center>
+    </div> #}
+    <div class="itemBody">
+        <!-- <input type="button"   value="Menu"/> -->
+        <ion-icon onclick="showHideMenu()" class="MenuIcon" name="reorder-three-outline"></ion-icon>
+        <!-- detail item -->
+        <div id="detailMaterile" class="HidedetailItem">
+              <center>
+                <br>
+                <h3>
+                  Detaile de Client
+                </h3>      
+                      <img src="" id="imgClient"  class="imgDetail">
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">CNI :</div>
+                        <div class="DetailInputs" id="CNI_detail">Nassim</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Nom :</div>
+                        <div class="DetailInputs" id="nom_detail" >Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Prenom :</div>
+                        <div class="DetailInputs" id="prenom_detail">Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Email :</div>
+                        <div class="DetailInputs" id="email_detail">Eloualydy</div>
+                      </div>
+          
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Telephone :</div>
+                        <div class="DetailInputs"id="tel_detail">Eloualydy</div>
+                      </div>
+                      <br>
+                      <div class="containerDetailInputs">
+                        <div class="DetailInputs">Adresse :</div>
+                        <div class="DetailInputs" id="adresse_detail">Eloualydy</div>
+                      </div>
+          
+                      <br>
+
+                      <button type="button" onclick="hideDetailForm()" class="btn btn-outline-primary">Annuler</button>
+
+              </center>
+        </div>
+        <!-- detail item -->
+        <!-- formulaire -->
+        <div id="formS" class="hideFormulaire">
+            <center>
+                <br>
+                <h3>Formulaire de Client</h3>
+<br>
+<br>
+                <div class="continerInputForm">
+                    <div>Photo : </div>
+                    <div><input accept="image/*"  class="textInputForm"   style="border-bottom: none;" id="photoClient" type="file"></div>
+                </div>
+                <br>           
+                <div class="continerInputForm">
+                    <div>CNI : </div>
+                    <div><input class="textInputForm"   id="cni_client" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Nom : </div>
+                    <div><input class="textInputForm"   id="nom_client" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Prenom : </div>
+                    <div><input class="textInputForm"   id="prenom_client" type="text"></div>
+                </div>
+                     
+                <br>           
+                <div class="continerInputForm">
+                    <div>Email : </div>
+                    <div><input class="textInputForm"   id="email_client" type="text"></div>
+                </div>
+                     
+                <br>           
+
+                <div class="continerInputForm">
+                    <div>Telephone : </div>
+                    <div><input class="textInputForm"   id="tel_client" type="text"></div>
+                </div>
+                     
+                <br>  
+                
+                <div class="continerInputForm">
+                    <div>Adresse : </div>
+                    <!-- <div><input    id="category_client" type="text"></div> -->
+                    <div><input class="textInputForm"   id="adresse_client" type="text"></div>
+                  </div>
+                     
+                <br>           
+
+                <input type="button" value="Ajouter" id="submitClient" onclick="submitClient()" class="btnFormulaire"/>&nbsp;
+                <input type="button" value="Annuler" onclick="hideFormulaire()" class="btnFormulaire"/>
+            </center>
+        </div>
+        <!-- end formulaire -->
+        <h3 class="Title">Gestion Des Client</h3>
+        <center>
+<br>
+<br>
+
+            {# <div class="charts">
+             <div class="charItem">
+             </div>
+             <div class="charItem">
+            </div> 
+              
+              
+            </div>
+            <br> #}
+            <br>
+            <div class="listContainer">
+
+                <div class="list">
+                    <br>
+                    <button type="button" onclick="showFormulaire()" class="btnAdd btn btn-outline-primary">Nouveau</button>
+                    <h3 style="text-align: left;margin-left: 10px;">Bare de recherche</h3>
+                    <div class="containerSearch">
+                        <input type="text" id="cni_search" placeholder="CNI" class="inputSearch"><br><br>
+                        <input type="text" id="nom_search" placeholder="Nom" class="inputSearch"><br><br>
+                        <input type="text" id="prenom_search" placeholder="Prenom" class="inputSearch">
+                    </div>
+                    <br>
+                    <div class="containerSearch">
+                        <input type="text" id="email_search" placeholder="Email" class="inputSearch"><br><br>
+                        <input type="text" id="tel_search" placeholder="Telephone" class="inputSearch"><br><br>
+                        <input type="text" id="adresse_search" placeholder="Adresse" class="inputSearch">
+                    </div>
+                    <br>
+                                        <button type="button" onclick="search_client()" class="btn btn-outline-primary">Chercher</button>
+                                        <button type="button" onclick="hideForm()" class="btn btn-outline-primary">Actualiser</button>
+                    <br>
+
+                    <div class="containerTable">
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Photo</th>
+                            <th scope="col">CNI</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col" colspan="3">Option</th>
+                          </tr>
+                        </thead>
+                        <tbody id="listClient">
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="pagination">
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li onclick="PreviosClient()" class="page-item">
+                            <a  class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li onclick="NextClient()" class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+
+                </div>
+<br>
+                <div class="latest">
+                  <center>
+                    <br>
+                    <div class="countAll">
+                      <div class="ticketCountAll">Totale Des Client</div> 
+                      <div id="ticketCountAll"></div>
+                      <br>
+                    </div>
+                    <br>
+                    <div class="ticketCountAll">Les Dernier Ajoute</div> 
+                    <br>
+                    <div id="itemLatestAddedClient">
+                      <div class='itemLatestAdded'><img  class='photoMateriel'> &nbsp;<div>Nassim eloualydy</div></div>                     
+                     </div>
+                    </center>
+                </div>
+            </div>
+
+        </center>
+    </div>
+      
+  </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="{{asset('assets/client.js')}}" ></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock  %}
